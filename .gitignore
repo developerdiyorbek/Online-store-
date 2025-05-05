@@ -1,0 +1,60 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.*.local
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Build files
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# PM2 logs (agar ishlatilayotgan bo‘lsa)
+pids/
+logs/
+*.log
+
+# VSCode va boshqa editor sozlamalari
+.vscode/
+.idea/
+*.swp
+
+# Uploads folder (agar vaqtinchalik fayllar saqlansa)
+uploads/
+tmp/
+temp/
+
+# Prisma (agar ishlatilsa)
+prisma/migrations/
+
+# Docker (agar ishlatilayotgan bo‘lsa)
+docker-compose.override.yml
+.dockerignore
+
+# Optional: yarn.lock yoki package-lock.json agar faqat bittasi ishlatilsa
+# yarn.lock
+# package-lock.json
