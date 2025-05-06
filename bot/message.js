@@ -1,7 +1,7 @@
-const { actions } = require("../constants");
+const { actions, callbackDatas } = require("../constants");
 const userModel = require("../models/user.model");
 const { bot } = require("./bot");
-const { category } = require("./helpers/category");
+const { getAllCategories, newCategory } = require("./helpers/category");
 const { start, requestContact } = require("./helpers/start");
 const { getAllUsers } = require("./helpers/users");
 
@@ -25,7 +25,11 @@ bot.on("message", async (msg) => {
     }
 
     if (text === "Katalog") {
-      category(msg);
+      getAllCategories(chatId);
+    }
+
+    if (user.action === callbackDatas.addCategory) {
+      newCategory(msg);
     }
   }
 });

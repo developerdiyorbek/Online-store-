@@ -38,7 +38,6 @@ const start = async (msg) => {
     await userModel.findByIdAndUpdate(
       checkUser._id,
       {
-        ...checkUser,
         action: actions.menu,
       },
       {
@@ -57,8 +56,6 @@ const start = async (msg) => {
       }
     );
   }
-
-  console.log(msg);
 };
 
 const requestContact = async (msg) => {
