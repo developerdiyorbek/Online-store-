@@ -1,7 +1,11 @@
 const { actions, callbackDatas } = require("../constants");
 const userModel = require("../models/user.model");
 const { bot } = require("./bot");
-const { getAllCategories, newCategory } = require("./helpers/category");
+const {
+  getAllCategories,
+  newCategory,
+  saveCategory,
+} = require("./helpers/category");
 const { start, requestContact } = require("./helpers/start");
 const { getAllUsers } = require("./helpers/users");
 
@@ -30,6 +34,10 @@ bot.on("message", async (msg) => {
 
     if (user.action === callbackDatas.addCategory) {
       newCategory(msg);
+    }
+
+    if (user.action.includes("edit_category-")) {
+      saveCategory(chatId, text);
     }
   }
 });
